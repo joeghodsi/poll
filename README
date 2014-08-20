@@ -1,0 +1,2 @@
+A simple poll webapp written in Django and hosted on Heroku. I followed this tutorial:
+https://docs.djangoproject.com/en/1.7/intro/tutorial01/
