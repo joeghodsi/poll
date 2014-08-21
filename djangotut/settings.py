@@ -36,6 +36,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'polls',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -62,12 +63,14 @@ DATABASES = {
     }
 }
 
+TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
+
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Los_Angeles'
 
 USE_I18N = True
 
@@ -81,9 +84,14 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+
+# Clark: this sets the db via heroku settings - it sets it to postgres
+# Uncomment and make into an if statement for when deploying to heroku
+# See BetterWorks settings.py for an example (ln239)
+
 # Parse database configuration from $DATABASE_URL
-import dj_database_url
-DATABASES['default'] =  dj_database_url.config()
+# import dj_database_url
+# DATABASES['default'] =  dj_database_url.config()
 
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
